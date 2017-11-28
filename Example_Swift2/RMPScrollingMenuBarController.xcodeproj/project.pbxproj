@@ -11,7 +11,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		8E4583BD1BC556FD00F1E691 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4583BC1BC556FD00F1E691 /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8E4583BD1BC556FD00F1E691 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4583BC1BC556FD00F1E691 /* PageViewController.swift */; };
 		9497AD4E7A6A71793ADEA9F5 /* Pods_RMPScrollingMenuBarController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6D077B87E4A12CB4F9D5ED /* Pods_RMPScrollingMenuBarController_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DE49E87A5E6793B0F456BF56 /* Pods_RMPScrollingMenuBarController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D936C9D1FC0F8BB016C39A6B /* Pods_RMPScrollingMenuBarController_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -163,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RMPScrollingMenuBarController_Example" */;
 			buildPhases = (
-				EC0FF6A6F0FF889C88840E46 /* Check Pods Manifest.lock */,
+				EC0FF6A6F0FF889C88840E46 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				45122AD49BDD099A993CBCAA /* Embed Pods Frameworks */,
-				C38498AEC155BCD0365EE153 /* Copy Pods Resources */,
+				45122AD49BDD099A993CBCAA /* [CP] Embed Pods Frameworks */,
+				C38498AEC155BCD0365EE153 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,12 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RMPScrollingMenuBarController_Tests" */;
 			buildPhases = (
-				2EDA264FA55D7FCB87689712 /* Check Pods Manifest.lock */,
+				2EDA264FA55D7FCB87689712 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				4A308140D7B6FEC9FE81680E /* Embed Pods Frameworks */,
-				9504059DB9FC36DFF6394202 /* Copy Pods Resources */,
+				4A308140D7B6FEC9FE81680E /* [CP] Embed Pods Frameworks */,
+				9504059DB9FC36DFF6394202 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,9 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3P723YPZTD;
+						LastSwiftMigration = 0830;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -258,59 +261,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2EDA264FA55D7FCB87689712 /* Check Pods Manifest.lock */ = {
+		2EDA264FA55D7FCB87689712 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RMPScrollingMenuBarController_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		45122AD49BDD099A993CBCAA /* Embed Pods Frameworks */ = {
+		45122AD49BDD099A993CBCAA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Example/Pods-RMPScrollingMenuBarController_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RMPScrollingMenuBarController/RMPScrollingMenuBarController.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMPScrollingMenuBarController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Example/Pods-RMPScrollingMenuBarController_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4A308140D7B6FEC9FE81680E /* Embed Pods Frameworks */ = {
+		4A308140D7B6FEC9FE81680E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Tests/Pods-RMPScrollingMenuBarController_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RMPScrollingMenuBarController/RMPScrollingMenuBarController.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMPScrollingMenuBarController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Tests/Pods-RMPScrollingMenuBarController_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9504059DB9FC36DFF6394202 /* Copy Pods Resources */ = {
+		9504059DB9FC36DFF6394202 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,14 +330,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Tests/Pods-RMPScrollingMenuBarController_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38498AEC155BCD0365EE153 /* Copy Pods Resources */ = {
+		C38498AEC155BCD0365EE153 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,19 +345,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RMPScrollingMenuBarController_Example/Pods-RMPScrollingMenuBarController_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC0FF6A6F0FF889C88840E46 /* Check Pods Manifest.lock */ = {
+		EC0FF6A6F0FF889C88840E46 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RMPScrollingMenuBarController_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -476,11 +491,13 @@
 			baseConfigurationReference = 3755D3E87FB3D187DD6722A8 /* Pods-RMPScrollingMenuBarController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3P723YPZTD;
 				INFOPLIST_FILE = RMPScrollingMenuBarController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -489,11 +506,13 @@
 			baseConfigurationReference = 0AD8D4DE470C59FDE1F0A57F /* Pods-RMPScrollingMenuBarController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3P723YPZTD;
 				INFOPLIST_FILE = RMPScrollingMenuBarController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -513,6 +532,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMPScrollingMenuBarController_Example.app/RMPScrollingMenuBarController_Example";
 			};
 			name = Debug;
@@ -529,6 +549,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMPScrollingMenuBarController_Example.app/RMPScrollingMenuBarController_Example";
 			};
 			name = Release;

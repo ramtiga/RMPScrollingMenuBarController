@@ -22,9 +22,9 @@ import UIKit
 
 class PageViewController: UIViewController {
 
-    private var messageLabel: UILabel?
+    fileprivate var messageLabel: UILabel?
 
-    private var _message: String?
+    fileprivate var _message: String?
     var message: String? {
         get {
             return _message
@@ -42,9 +42,9 @@ class PageViewController: UIViewController {
         f.size.height = 32
         messageLabel = UILabel(frame: f)
         messageLabel?.numberOfLines = 0
-        messageLabel?.textColor = UIColor.whiteColor()
-        messageLabel?.textAlignment = .Center
-        messageLabel?.center = CGPointMake(self.view.bounds.size.width * 0.5, self.view.bounds.size.height * 0.5)
+        messageLabel?.textColor = UIColor.white
+        messageLabel?.textAlignment = .center
+        messageLabel?.center = CGPoint(x: self.view.bounds.size.width * 0.5, y: self.view.bounds.size.height * 0.5)
         self.view.addSubview(messageLabel!)
         
         if message != nil {
